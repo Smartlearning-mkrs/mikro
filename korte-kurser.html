@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="da-dk" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Få værdifuld viden og praktiske værktøjer med SmartLearnings korte online kurser baseret på mikrolæring inden for ledelse og IT. Opkvalificer dig effektivt!">
+    <title>Korte kurser - SmartLearning online</title>
+    <link href="https://fonts.bunny.net/css?family=belleza:400|rubik:400,400i,600,600i" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgba(86, 55, 147, 1);
+            --douche-green: rgba(155, 240, 130, .25);
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            color: #333;
+        }
+        
+        .default-header {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .brand img {
+            height: 26px;
+        }
+        
+        .navigation-desktop ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 18px 0;
+        }
+        
+        .navigation-desktop a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .navigation-desktop a:hover {
+            color: var(--primary-color);
+        }
+        
+        .stretch {
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            align-items: stretch;
+            padding: 4rem 0;
+        }
+        
+        .douche-green {
+            background-color: var(--douche-green);
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #3746d7;
+            margin: 0;
+            font-family: 'Belleza', serif;
+        }
+        
+        .facts {
+            background: white;
+            border-radius: 1rem;
+            padding: .5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: -200px;
+        }
+        
+        .facts .d-flex {
+            
+            margin-bottom: 1.5rem;
+        }
+        
+        .facts .d-flex:last-child {
+            margin-bottom: 0;
+        }
+        
+        .facts img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .facts strong {
+            display: block;
+            margin-bottom: 0.1rem;
+        }
+        
+        .item {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .item-top {
+            background-color: var(--primary-color);
+            border-radius: 20px 20px 0 0;
+            color: white;
+            padding: 1.5rem;
+            height: 152px;
+        }
+        
+        .item-top h4 {
+            color: white;
+            margin: 0.5rem 0;
+            font-size: 1.25rem;
+        }
+        
+        .item-top small {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .item-bottom {
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.05);
+            border-radius: 0px 0px 20px 20px;
+        }
+        
+        .item-bottom p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        /* ECTS Combined Card styles */
+        .ects-card {
+            background: #cdd368;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 347px;
+        }
+        
+        .ects-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .ects-content {
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.05);
+            border-radius: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .ects-content h4 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .ects-content p {
+            margin-bottom: 1rem;
+            color: #555;
+            flex: 1;
+        }
+        
+        .ects-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .ects-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .ects-image {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        
+        .ects-content .row {
+            height: 100%;
+        }
+        
+        .ects-content .col-md-6:last-child {
+            display: flex;
+            align-items: stretch;
+        }
+        
+        /* Hide additional courses by default */
+        .hidden-courses {
+            display: none;
+        }
+        
+        .hidden-courses.show {
+            display: contents;
+            
+        }
+        
+        .show-all-link {
+            text-align: right;
+            margin: 2rem 0;
+        }
+        
+        .show-all-link a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .show-all-link a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+        
+        /* Mikro Kurser specific styles */
+        .mikro-kurser-section .item-top {
+            background-color: #783D3D !important;
+            height: 152px !important;
+            flex-shrink: 0;
+        }
+        
+        .mikro-kurser-section .row > .position-relative {
+            height: 347px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mikro-kurser-section .item-bottom {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .favorite-toggle {
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .sticker {
+            position: absolute;
+            top: -18px;
+            right: 18px;
+            width: 80px;
+            height: 80px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.75rem;
+            color: white;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+        
+        .contact-box {
+            background: rgba(195, 240, 240, 0.75);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .contact-box img {
+            width: 210px;
+            height: 200px;
+            border-radius: 10%;
+            object-fit: cover;
+            margin-top: -3rem;
+            margin-right: 1rem;
+        }
+        
+        .contact-info {
+            background: rgba(195, 240, 240, 0.75);
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+        
+        .video-section {
+            background: rgba(13, 202, 240, 0.25);
+            padding: 3rem 0;
+        }
+        
+        .footer {
+            background: #3746D7;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer p {
+            color: white;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="default-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center ">
+                <div class="brand">
+                    <a href="/">
+                        <img src="SmartLearning_logo.png" alt="Til forsiden, GetSkills" onerror="this.style.display='none'">
+                    </a>
+                </div>
+                <nav class="navigation-desktop d-none d-lg-flex">
+                    <ul>
+                        <li><a href="/fag">Find dit kursus</a></li>
+                        <li><a href="/akademiuddannelser">Akademi</a></li>
+                        <li><a href="/diplomuddannelser">Diplom</a></li>
+                        <li><a href="/korte-kurser">Korte Kurser</a></li>
+                        <li><a href="/smartuniverse">Blog</a></li>
+                        <li><a href="https://helpdesk.smartlearning.dk/hc/da" target="_blank">FAQ</a></li>
+                        <li><a href="/kontakt_os">Kontakt</a></li>
+                    </ul>
+                </nav>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="/søg" class="text-dark"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="/favoritter" class="text-success"><i class="fa-regular fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="stretch position-relative overflow-hidden douche-green pt-4 pb-4 d-flex align-items-stretch mb-5">
+        <img src="./Omstillingsfond.jpg" alt="" class="hero-image">
+        <div class="container d-flex flex-column justify-content-between position-relative z-1">
+            <div class="pos-breadcrumb">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb pb-2">
+                        <li class="breadcrumb-item"><a href="/">Forside</a></li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="page-header col-12 col-lg-8 col-xxl-9">
+                    <h1>Korte kurser</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="position-relative my-6">
+            <div class="row">
+                <div class="facts col-12 col-lg-4 col-xxl-3 order-lg-2 mb-5 ">
+                    <div class="rounded-4 p-lg-3 bg-white">
+                        <div class="d-flex mb-4">
+                            <div class="me-4">
+                                <i class="fa-solid fa-bolt" style="font-size: 1rem; color: var(--primary-color);"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0"><strong>Hurtigt og seriøst</strong></p>
+                                <p>Værdifuld viden på en eftermiddag</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4 ">
+                            <div class="me-4">
+                                <i class="fa-solid fa-toolbox" style="font-size: 1rem; color: var(--primary-color);"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0"><strong>Lavpraktiske værktøjer</strong></p>
+                                <p>Skab resultater med det samme</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <i class="fa-solid fa-user-tie" style="font-size: 1rem; color: var(--primary-color);"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0"><strong>Erfarne fageksperter</strong></p>
+                                <p>Testet på virkeligheden</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 col-xxl-9 order-lg-1">
+                    <h2>Brug for eksperthjælp til en faglig udfordring?</h2>
+                    <p><br>SmartLearnings korte kurser klæder dig lynhurtigt på med <strong>værdifuld</strong> <strong>viden</strong>, <strong>effektive</strong> <strong>værktøjer</strong> og <strong>solide</strong> <strong>færdigheder</strong> til at tackle konkrete udfordringer, du står overfor i dit arbejdsliv. Erfarne fageksperter guider dig i mål.</p>
+                    <p ><strong>Tjek kurserne ud herunder</strong> 👇</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="position-relative my-6">
+            <div class="row">
+                <div class="col-12 col-lg-4 col-xxl-3 order-2 mb-5">
+                    <div style="margin-top:70px;" class="contact-box">
+                        <!-- <div class="contact-info"> -->
+                            <div >
+                                <div class="mt-n5 me-5">
+                                    <img src="./liselotte.jpg" alt="Liselotte"  >
+                                </div>
+                                
+                                <div >
+                                  <br />  <p class="mb-0"><a href="mailto:vejledning@smartlearning.dk">vejledning@smart­learning.dk</a></p>
+                                    <p class="mb-0">+45 3615 4519</p>
+                                    <br />  <p class="mb-0 mt-2"><strong>Telefon åbningstider:</strong></p>
+                                      <p class="mb-0">Mandag - torsdag kl. 9.00 - 15.00</p>
+                                      <p class="mb-0">Fredag kl. 9.00 - 13.00</p>
+                                    
+                                </div>
+                            </div>
+                        <!--</div> -->
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 col-xxl-9 order-1 mb-4">
+                    <h2 style="margin-top:70px;" class="mb-4">Korte Kurser</h2>
+                    <div class="row">
+                        <!-- Course 1 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/byg-din-egen-chatgpt" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Byg din egen ChatGPT</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/byg-din-egen-chatgpt" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Hvordan skaber du nemt en skræddersyet AI-løsning? Få opskriften i kurset her – og kom hurtigt i gang med at bruge værktøjet CustomGPT til at bygge din egen GPT, der løser...</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>1 time</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 795,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/fra-medarbejder-til-leder-med-succes" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Fra medarbejder til leder med succes</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/fra-medarbejder-til-leder-med-succes" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Kurset er værktøjskassen til dine første år som leder. Du får en hands-on forståelse af hvad ledelse er, øvelser i at udvide dit ledelsesrum og bruge situationsbestemt ledelse, og...</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>3 timer</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 1.295,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/tal-med-gennemslagskraft-for-ledere" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Tal med Gennemslagskraft for ledere</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/tal-med-gennemslagskraft-for-ledere" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Vil du gerne have mere gennemslagskraft, når du taler foran medarbejderne, din chef eller samarbejdspartnere? Lær at præsentere, inspirere, og få andre...</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>2 timer</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 1.295,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Course 4 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/led-dine-medarbejdere-med-persontypeteori" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Led dine medarbejdere med persontypeteori</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/led-dine-medarbejdere-med-persontypeteori" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Lær dig selv og dine medarbejdere bedre at kende med Enneagrammet. Find din type, opdag dit udviklingspotentiale – og brug persontypeteori i din personaleledelse.</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>1,5 time</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 995,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- ECTS Combined Card (replaces Course 5 & 6) -->
+                        <div class="position-relative col-12 col-md-12 col-xxl-8 mb-5">
+                            <div class="ects-card">
+                                <div class="ects-content">
+                                    <div class="row h-100">
+                                        <div class="col-12 col-md-6 d-flex flex-column">
+                                            <h4>Leder du efter et kursus som kun tegn ECTS pointe?</h4>
+                                            <p>The course does more in depth on the specific topic and you can combine few mikro kurser to gain ECTS points.</p>
+                                            <a href="#mikro-kurser-section" class="mt-auto">Læs mere →</a>
+                                        </div>
+                                        <div class="col-12 col-md-6 d-flex align-items-stretch">
+                                            <img src="./evu.webp" alt="ECTS Points" class="ects-image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Show All Link -->
+                        <div class="col-12 show-all-link">
+                            <a href="#" id="show-all-korte-kurser" onclick="toggleKorteCourses(event)">Se alle korte kurser</a>
+                        </div>
+
+                        <!-- Hidden Courses Container (Courses 7-10) -->
+                        <div id="hidden-korte-courses" class="hidden-courses">
+                            <!-- Course 7 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5 p-2">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/faa_styr_paa_din_ai_politik" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Få styr på din AI politik</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/faa_styr_paa_din_ai_politik" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Vil du sikre en ansvarlig og strategisk brug af kunstig intelligens i din virksomhed? Så har du brug for en AI-politik! Kurset her giver dig viden og værktøjer til at udvikle en AI-politik..</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>1 time</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 795,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Course 8 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5 p-2">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/personlig-effektivitet-for-ledere" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Personlig effektivitet for ledere</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/personlig-effektivitet-for-ledere" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Er du leder – og vil du være mere effektiv? Her er kurset for dig, der vil være knivskarp til at strukturere din arbejdsdag, skabe overblik, prioritere opgaver og eliminere spildtid, så du...</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>2 timer</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 1.295,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Course 9 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5 p-2">
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/saadan-leder-du-paa-kvalitet" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Sådan leder du på kvalitet</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/saadan-leder-du-paa-kvalitet" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Hvad er kvalitet egentlig? Og hvordan leder du på det? Få svaret i kurset her, som klæder dig på med værdifuld viden og værktøjer til at definere, måle, lede på – og skabe resultater gennem kvalitet.</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>1,5 time</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 995,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Course 10 -->
+                        <div class=" position-relative col-12 col-md-6 col-xxl-4 mb-5 p-2">
+                            <div class="sticker">Startskud 4. nov</div>
+                            <div class="item-top text-white p-3 d-flex">
+                                <a href="/korte-kurser/bliv-klar-til-ai-act" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                    <p class="level mb-0"><small>Korte kurser</small></p>
+                                    <h4>Bliv klar til AI Act</h4>
+                                    <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                                </a>
+                                <div class="align-self-end fs-4">
+                                    <i class="favorite-toggle fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                            <a href="/korte-kurser/bliv-klar-til-ai-act" class="text-decoration-none text-body d-block item-bottom">
+                                <p class="small">Er din virksomhed klar til de nye EU-regler for kunstig intelligens? AI Act stiller skærpede krav til virksomheder, der udvikler og anvender AI. Her er kurset, der giver dig overblik...</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div><strong>Varighed</strong></div>
+                                        <div>2,5 time</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div><strong>Pris</strong></div>
+                                        <div>DKK 995,00</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        </div>
+                        <!-- End Hidden Courses Container -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mikro Kurser Section -->
+        <section id="mikro-kurser-section" class="position-relative my-6 mikro-kurser-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 col-xxl-9 mb-4">
+                        <h2 class="mb-4">Mikro Kurser</h2>
+                        <div class="row">
+                    <!-- Mikro Course 1 -->
+                    <div class="position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                        <div class="item-top text-white p-3 d-flex">
+                            <a href="/mikro-kurser/effektiv-kommunikation" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                <p class="level mb-0"><small>Mikro kurser</small></p>
+                                <h4>Effektiv Kommunikation</h4>
+                                <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                            </a>
+                            <div class="align-self-end fs-4">
+                                <i class="favorite-toggle fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <a href="/mikro-kurser/effektiv-kommunikation" class="text-decoration-none text-body d-block item-bottom">
+                            <p class="small">Lær at kommunikere mere effektivt i din daglige arbejdsdag. Dette korte mikro kursus giver dig værktøjer til at forbedre din kommunikation med kolleger, ledere og kunder.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div><strong>Varighed</strong></div>
+                                    <div>1 uge</div>
+                                </div>
+                                <div class="col-6">
+                                    <div><strong>Pris</strong></div>
+                                    <div>DKK 1495,00</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mikro Course 2 -->
+                    <div class="position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                        <div class="item-top text-white p-3 d-flex">
+                            <a href="/mikro-kurser/time-management" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                <p class="level mb-0"><small>Mikro kurser</small></p>
+                                <h4>Time Management</h4>
+                                <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                            </a>
+                            <div class="align-self-end fs-4">
+                                <i class="favorite-toggle fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <a href="/mikro-kurser/time-management" class="text-decoration-none text-body d-block item-bottom">
+                            <p class="small">Få kontrol over din tid og lær at prioritere effektivt. Dette mikro kursus giver dig konkrete teknikker til at maksimere din produktivitet og reducere stress.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div><strong>Varighed</strong></div>
+                                    <div>3 uger</div>
+                                </div>
+                                <div class="col-6">
+                                    <div><strong>Pris</strong></div>
+                                    <div>DKK 2495,00</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mikro Course 3 -->
+                    <div class="position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                        <div class="item-top text-white p-3 d-flex">
+                            <a href="/mikro-kurser/digital-sikkerhed" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                <p class="level mb-0"><small>Mikro kurser</small></p>
+                                <h4>Digital Sikkerhed</h4>
+                                <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                            </a>
+                            <div class="align-self-end fs-4">
+                                <i class="favorite-toggle fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <a href="/mikro-kurser/digital-sikkerhed" class="text-decoration-none text-body d-block item-bottom">
+                            <p class="small">Lær at beskytte dig selv og din virksomhed mod cybertrusler. Dette mikro kursus giver dig grundlæggende viden om digital sikkerhed og bedste praksis.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div><strong>Varighed</strong></div>
+                                    <div>5 dage</div>
+                                </div>
+                                <div class="col-6">
+                                    <div><strong>Pris</strong></div>
+                                    <div>DKK 1495,00</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Mikro Course 4 -->
+                    <div class="position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                        <div class="item-top text-white p-3 d-flex">
+                            <a href="/mikro-kurser/customer-service" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                <p class="level mb-0"><small>Mikro kurser</small></p>
+                                <h4>Kundeservice Excellence</h4>
+                                <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                            </a>
+                            <div class="align-self-end fs-4">
+                                <i class="favorite-toggle fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <a href="/mikro-kurser/customer-service" class="text-decoration-none text-body d-block item-bottom">
+                            <p class="small">Lær at levere fremragende kundeservice og bygge stærke kundrelationer. Dette mikro kursus giver dig værktøjer til at håndtere kundekontakt professionelt.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div><strong>Varighed</strong></div>
+                                    <div>9 dage</div>
+                                </div>
+                                <div class="col-6">
+                                    <div><strong>Pris</strong></div>
+                                    <div>DKK 2395,00</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- ECTS Combined Card (replaces Mikro Course 5 & 6) -->
+                    <div class="position-relative col-12 col-md-12 col-xxl-8 mb-5">
+                        <div class="ects-card">
+                            <div class="ects-content">
+                                <div class="row h-100">
+                                    <div class="col-12 col-md-6 d-flex flex-column">
+                                        <h4>Leder du efter et kursus som kun tegn ECTS pointe?</h4>
+                                        <p>The course does more in depth on the specific topic and you can combine few mikro kurser to gain ECTS points.</p>
+                                        <a href="#mikro-kurser-section" class="mt-auto">Læs mere →</a>
+                                    </div>
+                                    <div class="col-12 col-md-6 d-flex align-items-stretch">
+                                        <img src="./kort.jpg" alt="ECTS Points" class="ects-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+
+                    <!-- Show All Link -->
+                    <div class="col-12 show-all-link">
+                        <a href="#" id="show-all-mikro-kurser" onclick="toggleMikroCourses(event)">Se alle mikro kurser</a>
+                    </div>
+
+                    <!-- Hidden ECTS Card Container -->
+                    <div id="hidden-mikro-courses" class="hidden-courses">
+                        <!-- Mikro Course 7 -->
+                    <div class="position-relative col-12 col-md-6 col-xxl-4 mb-5">
+                        <div class="item-top text-white p-3 d-flex">
+                            <a href="/mikro-kurser/projektledelse" class="text-decoration-none text-white flex-grow-1 me-2 d-flex flex-column justify-content-between">
+                                <p class="level mb-0"><small>Mikro kurser</small></p>
+                                <h4>Projektledelse</h4>
+                                <div><small><i class="fa fa-calendar me-1"></i> Løbende optag</small></div>
+                            </a>
+                            <div class="align-self-end fs-4">
+                                <i class="favorite-toggle fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <a href="/mikro-kurser/projektledelse" class="text-decoration-none text-body d-block item-bottom">
+                            <p class="small">Lær at lede projekter effektivt fra start til slut. Dette mikro kursus giver dig værktøjer til at planlægge, eksekvere og afslutte projekter med succes, inklusive budgetstyring, tidsplanlægning....</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div><strong>Varighed</strong></div>
+                                    <div>3 uger</div>
+                                </div>
+                                <div class="col-6">
+                                    <div><strong>Pris</strong></div>
+                                    <div>DKK 2495,00</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    </div>
+                    <!-- End Hidden ECTS Card Container -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section my-6" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="position-relative" style="padding-top: 56.25%; background: #000; border-radius: 1rem; overflow: hidden;">
+                            <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                                <i class="fa-solid fa-play-circle" style="font-size: 4rem;"></i>
+                                <p class="mt-3">Video om korte kurser</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="p-4">
+                            <h2>Korte kurser - 100% online</h2>
+                            <p>Kurserne er for dig, der har brug for relevant viden og effektive værktøjer, du kan bruge i dit arbejdsliv her og nu. Tag kurserne uanset hvor du er. De er 100% online.</p>
+                            <p>Nysgerrig på hvordan det fungerer? Se videoen til venstre!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <section class="footer pt-4 pt-sm-5 pt-md-6 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-sm-5 mb-md-6">
+                    <ul>
+                        <li class="mb-2"><a href="/handelsbetingelser">Handelsbetingelser</a></li>
+                        <li class="mb-2"><a href="https://www.cphbusiness.dk/om-cphbusiness/persondatapolitik" target="_blank">Persondatapolitik</a></li>
+                        <li class="mb-2"><a href="/policy-html">Cookiepolitik</a></li>
+                        <li class="mb-2"><a href="https://www.was.digst.dk/smartlearning-dk" target="_blank">Tilgængelighedserklæring</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-sm-5 mb-md-6">
+                    <ul>
+                        <li class="mb-2"><a href="/hvem_er_vi">Om os</a></li>
+                        <li class="mb-2"><a href="/karakterstatistik">Karakterstatistik</a></li>
+                        <li class="mb-2"><a href="https://www.smartlearning.dk/bestil-eksamensopgave">Bestil eksamensopgave (for skoler)</a></li>
+                        <li class="mb-2"><a href="http://intra.merkonom-au.dk" target="_blank">Intra.merkonom-AU.dk (password)</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-sm-5 mb-md-6">
+                    <ul>
+                        <li class="mb-2"><a href="https://studie.smartlearning.dk/login/index.php" target="_blank">Studie login</a></li>
+                        <li class="mb-2"><a href="/nyhedsbrev">Tilmeld nyhedsbrev</a></li>
+                        <li class="mb-2"><a href="https://learninghub.smartlearning.dk/" target="_blank">LearningHub.dk</a></li>
+                        <li class="mb-2"><a href="https://helpdesk.smartlearning.dk/hc/da" target="_blank">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-sm-5 mb-md-6">
+                    <p>Frederikkevej 8, 2900 Hellerup<br>CVR: 45360644<br>EAN: 5798 000 560 550<br>P-nr.: 1031593812</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <div class="mb-3">
+                        <img src="./dankort.png" alt="dankort" class="me-2">
+                        <img src="./mastercard.png" alt="mastercard" class="me-2">
+                        <img src="./Visa_Point_of_Sale.png" alt="Visa" class="me-2">
+                        <img src="./Visa_Electron_Point_of_Sale.png" alt="Visa Electron">
+                    </div>
+                    <div class="mb-3">
+                        <a class="me-3" aria-label="Facebook" href="https://www.facebook.com/SmartLearningDK" target="_blank">
+                            <i class="fa-brands fa-facebook fa-2x"></i>
+                        </a>
+                        <a aria-label="LinkedIn" href="https://www.linkedin.com/company/smartlearning" target="_blank">
+                            <i class="fa-brands fa-linkedin fa-2x"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <small>Copyright © 2025 Alle rettigheder forbeholdes</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleKorteCourses(event) {
+            event.preventDefault();
+            const hiddenCourses = document.getElementById('hidden-korte-courses');
+            const showAllLink = document.getElementById('show-all-korte-kurser');
+            
+            if (hiddenCourses.classList.contains('show')) {
+                hiddenCourses.classList.remove('show');
+                showAllLink.textContent = 'Se alle korte kurser';
+            } else {
+                hiddenCourses.classList.add('show');
+                showAllLink.textContent = 'Skjul korte kurser';
+            }
+        }
+        
+        function toggleMikroCourses(event) {
+            event.preventDefault();
+            const hiddenCourses = document.getElementById('hidden-mikro-courses');
+            const showAllLink = document.getElementById('show-all-mikro-kurser');
+            
+            if (hiddenCourses.classList.contains('show')) {
+                hiddenCourses.classList.remove('show');
+                showAllLink.textContent = 'Se alle mikro kurser';
+            } else {
+                hiddenCourses.classList.add('show');
+                showAllLink.textContent = 'Skjul mikro kurser';
+            }
+        }
+    </script>
+</body>
+</html>
+

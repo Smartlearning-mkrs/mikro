@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Korte kurser + Mikrokurser (Option 2)</title>
+  <style>
+    :root {
+      --sl-primary:#0a6cff;
+      --sl-dark:#0f172a;
+      --sl-muted:#64748b;
+      --sl-bg:#f8fafc;
+      --card:#ffffff;
+      --badge-ects:#10b981; /* green */
+      --badge-hours:#6366f1; /* indigo */
+      --badge-new:#f59e0b;   /* amber */
+      --radius:14px;
+      --shadow:0 6px 20px rgba(15,23,42,.08);
+    }
+    * { box-sizing:border-box }
+    body {
+      margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--sl-dark); background:var(--sl-bg);
+    }
+    .wrap { max-width:1160px; margin:auto; padding:28px 20px 60px; }
+    header h1 { margin:0 0 6px; font-size:34px }
+    header p { margin:0; color:var(--sl-muted) }
+    .section {
+      margin-top:28px; padding:28px; background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+    }
+    .section--mikro { background:#eef6ff; border:1px solid #dbeafe; }
+    .section h2 { margin:0 0 8px; font-size:24px }
+    .section .lead {
+      margin:0 0 18px; color:var(--sl-muted);
+    }
+    .grid {
+      display:grid; gap:16px;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    }
+    .card {
+      background:#fff; border-radius:12px; padding:16px; box-shadow:var(--shadow);
+      display:flex; flex-direction:column; gap:10px; border:1px solid #eef2f7;
+    }
+    .title { font-size:18px; margin:0 0 2px }
+    .meta { color:var(--sl-muted); font-size:14px }
+    .badges { display:flex; gap:8px; flex-wrap:wrap }
+    .badge {
+      display:inline-flex; align-items:center; gap:6px; font-size:12px;
+      padding:4px 8px; border-radius:999px; font-weight:600; color:#fff;
+    }
+    .badge.hours { background:var(--badge-hours) }
+    .badge.ects { background:var(--badge-ects) }
+    .badge.new { background:var(--badge-new) }
+    .cta {
+      margin-top:auto; display:inline-block; text-decoration:none; text-align:center;
+      background:var(--sl-primary); color:#fff; padding:10px 12px; border-radius:10px; font-weight:700;
+    }
+    .topnote {
+      background:#fff; border:1px solid #e5e7eb; padding:10px 12px; border-radius:10px; margin-top:14px; color:var(--sl-muted);
+    }
+    .anchor-nav { margin-top:16px; display:flex; gap:10px; }
+    .anchor-nav a {
+      text-decoration:none; background:#fff; border:1px solid #e5e7eb; padding:8px 12px; border-radius:10px; color:var(--sl-dark);
+    }
+    .sr { position:absolute; left:-9999px }
+	.navigation-desktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 2rem;
+    }
+    .navigation-desktop ul.nav {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .navigation-desktop ul.nav li a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .navigation-desktop ul.nav li a:hover,
+    .navigation-desktop ul.nav li.active > a,
+    .navigation-desktop ul.nav li.current > a {
+      background: #eef2ff;
+      color: #0a6cff;
+    }
+    .navigation-desktop form {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    .navigation-desktop input[type="text"] {
+      border: 1px solid #d1d5db;
+      border-radius: 20px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+	<nav class="navigation-desktop d-none d-lg-flex flex-grow-1">
+    <ul class="mod-menu mod-list nav">
+      <li class="nav-item item-582"><a href="/fag">Find dit kursus</a></li>
+      <li class="nav-item item-108 parent"><a href="/akademiuddannelser">Akademi</a></li>
+      <li class="nav-item item-145 parent"><a href="/diplomuddannelser">Diplom</a></li>
+      <li class="nav-item item-713 current active parent"><a href="/korte-kurser" aria-current="page">Korte kurser</a></li>
+      <li class="nav-item item-1445"><a href="/smartuniverse">Blog</a></li>
+      <li class="nav-item item-1446"><a href="https://helpdesk.smartlearning.dk/hc/da" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+      <li class="nav-item item-1115"><a href="/kontakt_os">Kontakt</a></li>
+    </ul>
+
+    <form class="mod-finder js-finder-searchform form-search" action="/søg?f=1" method="get" role="search">
+      
+      <input type="text" name="q" id="mod-finder-searchword570"
+             class="js-finder-search-query form-control"
+             value="" placeholder="Søg …">
+      <input type="hidden" name="f" value="1">
+    </form>
+  </nav>
+      <h1>Korte kurser & Mikrokurser</h1>
+      <p>Korte kurser: 1–4 timer (ingen ECTS). Mikrokurser: forløb over flere uger (kan give ECTS).</p>
+      <nav class="anchor-nav" aria-label="Sektioner">
+        <a href="#korte-kurser">Gå til Korte kurser</a>
+        <a href="#mikrokurser">Gå til Mikrokurser</a>
+      </nav>
+      <div class="topnote">
+        <strong>Hurtig forklaring:</strong> Korte kurser er intense sessioner på få timer. Mikrokurser strækker sig over uger og kan i nogle tilfælde give ECTS-point eller indgå i et forløb.
+      </div>
+    </header>
+
+    <!-- Section 1: Korte kurser -->
+    <section id="korte-kurser" class="section" aria-labelledby="h-korte">
+      <h2 id="h-korte">Korte kurser</h2>
+      <p class="lead">Fokuserede forløb på 1–4 timer – uden ECTS.</p>
+      <div class="grid">
+        <!-- sample cards -->
+        <article class="card">
+          <h3 class="title">ChatGPT til hverdagsopgaver</h3>
+          <div class="badges">
+            <span class="badge hours">1,5 time ⏱️</span>
+          </div>
+          <p class="meta">Online • Start: Flere datoer</p>
+          <a class="cta" href="#">Læs mere</a>
+        </article>
+
+        <article class="card">
+          <h3 class="title">Datasikkerhed i praksis</h3>
+          <div class="badges">
+            <span class="badge hours">3 timer ⏱️</span>
+          </div>
+          <p class="meta">Online • Start: 12. dec</p>
+          <a class="cta" href="#">Læs mere</a>
+        </article>
+
+        <article class="card">
+          <h3 class="title">Excel: Power Query på 2 timer</h3>
+          <div class="badges">
+            <span class="badge hours">2 timer ⏱️</span>
+          </div>
+          <p class="meta">Online • Start: 20. jan</p>
+          <a class="cta" href="#">Læs mere</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 2: Mikrokurser -->
+    <section id="mikrokurser" class="section section--mikro" aria-labelledby="h-mikro">
+      <h2 id="h-mikro">Mikrokurser <span class="sr">(flere uger – kan give ECTS)</span></h2>
+      <p class="lead">Forløb over 3–6 uger. Kan i nogle tilfælde give ECTS og tælle mod et større forløb.</p>
+      <div class="grid">
+        <article class="card">
+          <h3 class="title">AI i undervisning – grundforløb</h3>
+          <div class="badges">
+            <span class="badge ects">Mulig ECTS 🎓</span>
+            <span class="badge new">Nyhed</span>
+          </div>
+          <p class="meta">Online • Varighed: 4 uger • Start: 3. feb</p>
+          <a class="cta" href="#">Læs mere</a>
+        </article>
+
+        <article class="card">
+          <h3 class="title">Dataanalyse for praktikere</h3>
+          <div class="badges">
+            <span class="badge ects">Mulig ECTS 🎓</span>
+          </div>
+          <p class="meta">Online • Varighed: 5 uger • Start: 17. feb</p>
+          <a class="cta" href="#">Læs mere</a>
+        </article>
+
+        <article class="card">
+          <h3 class="title">Webudvikling: Fra nul til deploy</h3>
+          <div class="badges">
+            <span class="badge ects">Mulig ECTS 🎓</span>
+          </div>
+          <p class="meta">Online • Varighed: 6 uger • Start: 10. mar</p>
+          <a class="cta" href="#">Læs mere</a>
+        </article>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
